@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:preply_clone/academy_page.dart';
 import 'package:preply_clone/insights.dart';
 import 'package:preply_clone/messages.dart';
 import 'package:preply_clone/schedule.dart';
@@ -138,22 +139,12 @@ class _HomeState extends State<Home> {
       ListTile(
         leading: Icon(Icons.attach_money_rounded),
         title: Text('50 min lesson price'),
-        onTap: () {
-          setState(() {
-            selectedIndex = 2;
-          });
-          Navigator.pop(context);
-        },
+        
       ),
       ListTile(
         leading: Icon(Icons.wallet_giftcard_sharp),
         title: Text('Refer and earn \$25'),
-        onTap: () {
-          setState(() {
-            selectedIndex = 3;
-          });
-          Navigator.pop(context);
-        },
+        
       ),
       SizedBox(height: 15,),
       //help bölümü
@@ -163,42 +154,27 @@ class _HomeState extends State<Home> {
       ListTile(
         leading: Icon(Icons.info_outline),
         title: Text('Support center'),
-        onTap: () {
-          setState(() {
-            selectedIndex = 4;
-          });
-          Navigator.pop(context);
-        },
+        
       ),
       ListTile(
         leading: Icon(Icons.insert_drive_file_outlined),
         title: Text('Legal center'),
-        onTap: () {
-          setState(() {
-            selectedIndex = 5;
-          });
-          Navigator.pop(context);
-        },
+        
       ),
       ListTile(
         leading: Icon(Icons.people_rounded),
         title: Text('Community'),
-        onTap: () {
-          setState(() {
-            selectedIndex = 6;
-          });
-          Navigator.pop(context);
-        },
+        
       ),
       ListTile(
         leading: Icon(Icons.school_outlined),
         title: Text('Academy'),
         onTap: () {
-          setState(() {
-            selectedIndex = 7;
-          });
-          Navigator.pop(context);
-        },
+    Navigator.pop(context); // önce Drawer'ı kapat
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AcademyPage()),
+    );}
       ),
       SizedBox(height: 15,),
       //settings bölümü
@@ -208,22 +184,12 @@ class _HomeState extends State<Home> {
       ListTile(
         leading: Icon(Icons.language),
         title: Text('App language'),
-        onTap: () {
-          setState(() {
-            selectedIndex = 8;
-          });
-          Navigator.pop(context);
-        },
+        
       ),
       ListTile(
         leading: Icon(Icons.access_time),
         title: Text('Time zone'),
-        onTap: () {
-          setState(() {
-            selectedIndex = 9;
-          });
-          Navigator.pop(context);
-        },
+        
       ),
       SizedBox(height: 15,),
       Divider(
@@ -234,12 +200,7 @@ class _HomeState extends State<Home> {
       ListTile(
         leading:Icon(Icons.delete_forever),
         title: Text("Delete account"),
-        onTap: () {
-          setState(() {
-            selectedIndex = 10;
-          });
-          Navigator.pop(context);
-        },
+        
       ),
       Divider(
         color: Colors.grey[300],
