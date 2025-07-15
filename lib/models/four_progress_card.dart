@@ -59,6 +59,10 @@ class FourCardProgress extends StatelessWidget {
             color: Colors.white,
             margin: const EdgeInsets.symmetric(vertical: 8),
             shape: RoundedRectangleBorder(
+              side: BorderSide(
+                color: Colors.grey.shade300,
+                width: 1.0,
+              ),
               borderRadius: BorderRadius.circular(8),
             ),
             elevation: 2,
