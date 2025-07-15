@@ -1,0 +1,1 @@
+ /Users/beyzakondu.tricloud.com/Desktop/preply2-main/.dart_tool/flutter_build/8a100724ee67ca434d0dccea662a77c1/native_assets.json: 
