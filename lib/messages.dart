@@ -60,16 +60,20 @@ class _MessagesState extends State<Messages> {
               ),
             ),
           ),
-          TabBar(
-            labelPadding: const EdgeInsets.only(left: 0, right: 20),
-            isScrollable: true,
-            labelColor: Colors.black,
-            unselectedLabelColor: Colors.black54,
-            indicatorColor: const Color.fromRGBO(194, 95, 134, 1),
-            tabs: const [
-              Tab(text: 'All'),
-              Tab(text: 'Archived'),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: TabBar(
+              tabAlignment: TabAlignment.start,
+              labelPadding: const EdgeInsets.only(left: 0, right: 20),
+              isScrollable: true,
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.black54,
+              indicatorColor: const Color.fromRGBO(194, 95, 134, 1),
+              tabs: const [
+                Tab(text: 'All'),
+                Tab(text: 'Archived'),
+              ],
+            ),
           ),
           Flexible(
             fit: FlexFit.tight,
