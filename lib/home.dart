@@ -395,9 +395,9 @@ class _HomeState extends State<Home> {
   );
 
   setState(() {
-    isVisible = result!;  // Ana state güncelleniyor
-    isOn = isVisible;   // isOn da isVisible ile uyumlu olabilir
-  });
+  isVisible = result ?? false;  // null ise false olur
+  isOn = isVisible;
+});
 }
 
   }

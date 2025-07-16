@@ -51,7 +51,6 @@ class Periodyataycards extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Başlık + (son iki karta info ikonu)
                     Row(
                       children: [
                         Expanded(
@@ -59,8 +58,7 @@ class Periodyataycards extends StatelessWidget {
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 17)),
                         ),
-
-                        if (index >= currentData.length - 2) // son iki karta ekle
+                        if (index >= currentData.length - 2)
                           InfoTooltip(message: item['info'] ?? ''),
                       ],
                     ),
@@ -131,7 +129,7 @@ class _InfoTooltipState extends State<InfoTooltip> {
     final size = renderBox.size;
     final offset = renderBox.localToGlobal(Offset.zero);
     final screenWidth = MediaQuery.of(context).size.width;
-    final rightPosition = screenWidth - offset.dx + 10; // 10px biraz kaydırdım
+    final rightPosition = screenWidth - offset.dx + 10;
 
     _overlayEntry = OverlayEntry(
       builder: (context) => Positioned(
@@ -163,12 +161,17 @@ class _InfoTooltipState extends State<InfoTooltip> {
     });
   }
 
-  void _hideTooltip() {
+  void _hideTooltip({bool fromDispose = false}) {
     _overlayEntry?.remove();
     _overlayEntry = null;
-    setState(() {
+
+    if (!fromDispose) {
+      setState(() {
+        _isTooltipVisible = false;
+      });
+    } else {
       _isTooltipVisible = false;
-    });
+    }
   }
 
   @override
@@ -184,7 +187,7 @@ class _InfoTooltipState extends State<InfoTooltip> {
 
   @override
   void dispose() {
-    _hideTooltip();
+    _hideTooltip(fromDispose: true);
     super.dispose();
   }
 }

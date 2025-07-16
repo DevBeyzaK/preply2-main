@@ -6,6 +6,7 @@ class MessageBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       padding: const EdgeInsets.all(16),
       height: 350,
       child: Column(
