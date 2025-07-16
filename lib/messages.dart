@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:preply_clone/message_detail_page.dart';
 import 'package:preply_clone/models/person.dart';
 import 'package:preply_clone/widgets/profile_avatar_button.dart';
 
@@ -106,6 +107,15 @@ class _MessagesState extends State<Messages> {
                         );
                       },
                       child: ListTile(
+                        onTap: () {
+                         Navigator.push(
+                           context,
+                         MaterialPageRoute(
+                         builder: (_) => MessageDetailPage(personName: person.name,
+        personImage: person.imgUrl),
+                          ),
+                         );
+                        },
                         leading: ClipRRect(
                           borderRadius: BorderRadius.circular(5),
                           child: Image.asset(
